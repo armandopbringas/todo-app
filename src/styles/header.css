@@ -1,0 +1,24 @@
+.header-header {
+  height: 5rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.header-title-container {
+  color: #61dafb;
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  font-weight: 600;
+}
+
+@media screen (min-width: 769px) {
+  .header-header {
+    padding: 2rem;
+  }
+}

@@ -1,6 +1,11 @@
+import '../styles/todo-search.css';
+
 const TodoSearch = () => {
   return (
-    <input placeholder='llevar a bañar Buzz' />
+    <input 
+      className='todo-search'
+      placeholder='llevar a bañar Buzz' 
+    />
   );
 }
  

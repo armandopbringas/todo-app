@@ -1,20 +1,20 @@
 .todo-item {
-  background-color: #282c34;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
   margin-top: 24px;
-  border-radius: 10px;
-  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #282c34;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.todo-text {
+  display: flex;
 }
 
 .todo-item-p {
-  margin: 24px 0 24px 24px;
-  width: calc(100% - 120px);
   font-size: 18px;
-  line-height: 24px;
-  font-weight: 400;
 }
 
 .todo-item-p--complete {
@@ -22,29 +22,19 @@
 }
 
 .icon {
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 48px;
   width: 48px;
+  height: 48px;
   font-size: 24px;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-.icon-check {
-  position: absolute;
-  left: 12px;
-}
 .icon-check--active {
   color: #4caf50;
 }
 
-.icon-delete {
-  position: absolute;
-  top: -24px;
-  right: 0;
-}
 .icon-delete:hover {
   color: red;
 }

@@ -1,9 +1,9 @@
 import '../styles/todo-counter.css';
 
-const TodoCounter = () => {
+const TodoCounter = ({ total, completed }) => {
   return (
     <h3 className='todo-counter'>
-      You don't have todo's yet
+      Completed {completed} of {total} TODOs
     </h3>
   );
 }

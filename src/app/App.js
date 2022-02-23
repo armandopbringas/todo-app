@@ -8,9 +8,9 @@ import { TodoItem } from '../components/todo-item'
 import { ButtonTodoCreater } from '../components/button-todo-creater';
 
 const defaultTodos = [
-  {text:'Bañar a Buzz', completed: true},
-  {text:'Tomar curso de react', completed: false},
-  {text:'Llorar con la llorona', completed: false}
+  {text:'Todo one', completed: true},
+  {text:'Todo two', completed: false},
+  {text:'Todo three', completed: false}
 ];
 
 const App = () => {
@@ -32,6 +32,20 @@ const App = () => {
     });
   }
 
+  const completeTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text);
+    const newTodos = [...todos];
+    newTodos[todoIndex].completed = true;
+    setTodos(newTodos);
+  };
+
+  const deleteTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text);
+    const newTodos = [...todos];
+    newTodos.splice(todoIndex, 1);
+    setTodos(newTodos);
+  };
+
   return (
     <>
       <Header />
@@ -50,6 +64,8 @@ const App = () => {
               key={todo.text} 
               text={todo.text} 
               completed={todo.completed}
+              onComplete={() => completeTodo(todo.text)}
+              onDelete={() => deleteTodo(todo.text)}
             />
           ))}
         </TodoList>

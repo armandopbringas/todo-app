@@ -6,6 +6,8 @@ import { TodoList } from "../components/todo-list";
 import { TodoSearch } from "../components/todo-search";
 
 const UI = ({
+  loading,
+  error,
   totalTodos,
   completedTodosLength,
   searchValue,
@@ -27,6 +29,9 @@ const UI = ({
           setSearchValue={setSearchValue}
         />
         <TodoList>
+          {error && <p>Desespérate, hubo un error...</p>}
+          {loading && <p>Estamos cargando, no desesperes...</p>}
+          {(!loading && !searchedTodos.length) && <p>¡Crea tu primer TODO!</p>}
           {searchedTodos.map(todo => (
             <TodoItem 
               key={todo.text} 

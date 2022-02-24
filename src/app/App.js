@@ -17,9 +17,7 @@ const useLocalStorage = (itemName, initialValue) => {
           parsedItem = initialValue;
           setItem(parsedItem);
           setLoading(false);
-        } else {
-          parsedItem = JSON.parse(localStorageItem);
-        }
+        } else parsedItem = JSON.parse(localStorageItem);
       } catch(error) {
         setError(error);
       }
@@ -52,9 +50,7 @@ const App = () => {
   const totalTodos = todos.length;
   let searchedTodos = [];
   
-  if (!searchValue.length >= 1) {
-    searchedTodos = todos;
-  }
+  if (!searchValue.length >= 1)searchedTodos = todos;
   else {
     searchedTodos = todos.filter(todo => {
       const todoText = todo.text.toLowerCase();

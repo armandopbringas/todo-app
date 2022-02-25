@@ -1,0 +1,27 @@
+.form {
+  line-height: 2;
+  width: 25rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  background: #282c34;
+}
+
+textarea {
+  padding: 0.5rem;
+  resize: none;
+  height: 5rem;
+  margin: 1rem 0;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  border-radius: 5px;
+  margin: 0 1rem;
+  padding: 0.5rem 2rem;
+}

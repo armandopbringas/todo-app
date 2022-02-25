@@ -1,9 +1,13 @@
+import { useContext } from 'react';
+import { AppContext } from '../context';
 import '../styles/todo-counter.css';
 
-const TodoCounter = ({ total, completed }) => {
+const TodoCounter = () => {
+  const { totalTodos, completedTodos } = useContext(AppContext);
+
   return (
     <h3 className='todo-counter'>
-      Completed {completed} of {total} TODOs
+      Completed {completedTodos} of {totalTodos} TODOs
     </h3>
   );
 }

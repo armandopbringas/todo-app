@@ -3,7 +3,7 @@ import { AppContext } from '../context';
 import '../styles/button-todo-creater.css';
 
 const ButtonTodoCreater = () => {
-  const { openModal, setOpenModal } = useContext(AppContext);
+  const { setOpenModal } = useContext(AppContext);
   const openModalWindow = () => setOpenModal(prevState => !prevState);
 
   return (

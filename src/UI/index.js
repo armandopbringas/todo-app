@@ -14,14 +14,14 @@ const UI = () => {
 
   return (
     <>
-      <Header />
       <div className='app'>
+        <Header />
         <TodoCounter />
         <TodoSearch />
         <TodoList>
           {error && <p>Desespérate, hubo un error...</p>}
           {loading && <p>Estamos cargando, no desesperes...</p>}
-          {(!loading && !searchedTodos.length) && <p>¡Crea tu primer TODO!</p>}
+          {(!loading && !searchedTodos.length) && <p>Crea tu primer TODO</p>}
           {searchedTodos.map(todo => (
             <TodoItem 
               key={todo.text} 

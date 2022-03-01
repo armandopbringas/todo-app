@@ -11,19 +11,17 @@ const AppProvider = ({ children }) => {
     error,
   } = useLocalStorage('TODOS_V1', [])
   const [searchValue, setSearchValue] = useState('');
-  const [openModal, setOpenModal] = React.useState(false);
-  const completedTodos = todos.filter(todo => !!todo.completed);
-  const completedTodosLength = completedTodos.length;
+  const [openModal, setOpenModal] = useState(false);
+  const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
   let searchedTodos = [];
   
-  if (!searchValue.length >= 1)searchedTodos = todos;
+  if (!searchValue.length >= 1) searchedTodos = todos;
   else {
     searchedTodos = todos.filter(todo => {
       const todoText = todo.text.toLowerCase();
       const searchText = searchValue.toLowerCase();
-      const textHasLowerCase = todoText.includes(searchText);
-      return textHasLowerCase;
+      return todoText.includes(searchText);
     });
   }
 
@@ -53,13 +51,12 @@ const AppProvider = ({ children }) => {
       error,
       totalTodos,
       completedTodos,
-      completedTodosLength,
       searchValue,
       setSearchValue,
+      searchedTodos,
       addTodo,
       completeTodo,
       deleteTodo,
-      searchedTodos,
       openModal,
       setOpenModal,
     }}>
